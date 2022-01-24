@@ -1,0 +1,684 @@
+{
+	"info": {
+		"_postman_id": "15b3f377-6eaf-499b-b0fa-f5dcb07ab8d1",
+		"name": "Reyahny",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"userTest\",\r\n    \"email\":\"m@g.com\",\r\n    \"password\":\"123\",\r\n    \"confirm_password\":\"123\",\r\n    \"phone\":\"010101010\",\r\n    \"gender\":\"male\",\r\n    \"role\":\"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forget Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"010101010\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/forget-password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"forget-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reset_code\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reset-code",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reset-code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reset_code\": \"123456\",\r\n    \"password\": \"123\",\r\n    \"phone\": \"010101010\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reset-password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Social Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"m@g.com\",\r\n    \"username\": \"usertest\",\r\n    \"id\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/social-login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"social-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sliders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTMxOTAxNSwiZXhwIjoxNjM5MzIyNjE1LCJuYmYiOjE2MzkzMTkwMTUsImp0aSI6IjE4RFB3N3NKcFU0OWZBd0QiLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DWtzjk-9FwEtHEex1QbVgkzbwPFevEoUt4VpjwjuI8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lang_code\": \"en\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-sliders",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-sliders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Videos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTMxOTAxNSwiZXhwIjoxNjM5MzIyNjE1LCJuYmYiOjE2MzkzMTkwMTUsImp0aSI6IjE4RFB3N3NKcFU0OWZBd0QiLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DWtzjk-9FwEtHEex1QbVgkzbwPFevEoUt4VpjwjuI8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lang_code\": \"en\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-videos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Services",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTMxOTAxNSwiZXhwIjoxNjM5MzIyNjE1LCJuYmYiOjE2MzkzMTkwMTUsImp0aSI6IjE4RFB3N3NKcFU0OWZBd0QiLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DWtzjk-9FwEtHEex1QbVgkzbwPFevEoUt4VpjwjuI8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lang_code\": \"en\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-services",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTMxOTAxNSwiZXhwIjoxNjM5MzIyNjE1LCJuYmYiOjE2MzkzMTkwMTUsImp0aSI6IjE4RFB3N3NKcFU0OWZBd0QiLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DWtzjk-9FwEtHEex1QbVgkzbwPFevEoUt4VpjwjuI8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_id\": \"2\",\r\n    \"lang_code\": \"en\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-products",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Connection Types",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTMwMzQwMiwiZXhwIjoxNjM5MzA3MDAyLCJuYmYiOjE2MzkzMDM0MDIsImp0aSI6IkhUcDF5RjhxMDBxQVJKcm8iLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QPZ4Zuy0jThR9tL72_d1SYDEFlf6sxRBrQVsUvDx8_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_id\": \"2\",\r\n    \"lang_code\": \"en\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-connection-types",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-connection-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTMwMzQwMiwiZXhwIjoxNjM5MzA3MDAyLCJuYmYiOjE2MzkzMDM0MDIsImp0aSI6IkhUcDF5RjhxMDBxQVJKcm8iLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QPZ4Zuy0jThR9tL72_d1SYDEFlf6sxRBrQVsUvDx8_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-details",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTM4MzkwOCwiZXhwIjoxNjM5Mzg3NTA4LCJuYmYiOjE2MzkzODM5MDgsImp0aSI6InNyZ1BVR243bGVHZTQzc04iLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.i_6VE87FX0T4_g2Lt0lU05e4pOZq0Eb1PlmfF95wEk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-details",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Details To user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTMxOTAxNSwiZXhwIjoxNjM5MzIyNjE1LCJuYmYiOjE2MzkzMTkwMTUsImp0aSI6IjE4RFB3N3NKcFU0OWZBd0QiLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DWtzjk-9FwEtHEex1QbVgkzbwPFevEoUt4VpjwjuI8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\" : \"1\",\r\n    \"country_name\" : \"sd\",\r\n    \"country_code\" : \"sd\",\r\n    \"address\" : \"sd\",\r\n    \"location_lat\" : \"sd\",\r\n    \"location_long\" : \"sd\",\r\n    \"currancy\" : \"sd\",\r\n    \"phone\" : \"sdds\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add-details",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add to Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTM4MzkwOCwiZXhwIjoxNjM5Mzg3NTA4LCJuYmYiOjE2MzkzODM5MDgsImp0aSI6InNyZ1BVR243bGVHZTQzc04iLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.i_6VE87FX0T4_g2Lt0lU05e4pOZq0Eb1PlmfF95wEk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\" : 1,\r\n    \"service_id\" : 2,\r\n    \"price\" : \"123\",\r\n    \"water_pipe_diameter_id\" : 1,\r\n    \"number_of_connections\" : \"12\",\r\n    \"number_of_residents\" : \"12\",\r\n    \"products_price\": \"12\",\r\n    \"vat_price\": \"123\",\r\n    \"total_price\": \"123\",\r\n    \"delivery_price\": \"12\",\r\n    \"grant_total_price\": \"112313\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add-cart",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Cart to Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTM4MzkwOCwiZXhwIjoxNjM5Mzg3NTA4LCJuYmYiOjE2MzkzODM5MDgsImp0aSI6InNyZ1BVR243bGVHZTQzc04iLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.i_6VE87FX0T4_g2Lt0lU05e4pOZq0Eb1PlmfF95wEk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\" : 1,\r\n    \"cart_id\" : \"61b7050e550d00002a000318\",\r\n    \"details_id\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add-order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Bill Image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzOTMxOTAxNSwiZXhwIjoxNjM5MzIyNjE1LCJuYmYiOjE2MzkzMTkwMTUsImp0aSI6IjE4RFB3N3NKcFU0OWZBd0QiLCJzdWIiOiI2MTVjMmYzMGIwMTcyODU2MTc1NGRiMzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DWtzjk-9FwEtHEex1QbVgkzbwPFevEoUt4VpjwjuI8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bill_price\": \"12\",\r\n    \"bill_date\": \"12\",\r\n    \"user_id\": \"1\",\r\n    \"cart_id\": \"1\",\r\n    \"image\": \"asd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add-billimages",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add-billimages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
